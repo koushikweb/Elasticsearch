@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-//    return view('welcome');
+  //return view('welcome');
 });
 
 use App\Article;
@@ -35,9 +35,9 @@ use App\Article;
 //
 //    return $articles;
 //});
-
-Route::get('articleSearch', 'ArticleController@index');
-Route::post('articleSearchCreate', 'ArticleController@create');
+Route::get('/', 'ArticleController@listing');
+Route::get('/articleSearch', 'ArticleController@index');
+Route::post('/articleSearchCreate', 'ArticleController@create');
 
 Route::get('about', 'AboutController@index');
 Route::get('todos', 'TodosController@index');

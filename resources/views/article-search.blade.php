@@ -1,4 +1,5 @@
- <div class="row">
+
+<div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h1 class="text-primary" style="text-align: center;">DigitalBga Search</h1>
         </div>
@@ -6,6 +7,8 @@
     <div class="container">
         <div class="panel panel-primary">
             <div class="panel-heading">
+                <a href="{{ url('/') }}">Back to Home</a>
+                <p></p>
                 <div class="row">
                     <div class="col-lg-6">
                         {{ Form::open(array('method'=>'get','class'=>'')) }}
@@ -47,24 +50,24 @@
                                         </ul>
                                     </div>
                                 @endif
-                                {{ Form::open(array('url' => 'ArticleSearchCreate','autocomplete'=>'off')) }}
+                                {{ Form::open(array('url' => 'articleSearchCreate','autocomplete'=>'off')) }}
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <strong>First Name:</strong>
-                                            {{ Form::text('first_name', null, array('placeholder' => 'Title','class' => 'form-control')) }}
+                                            <strong>Title:</strong>
+                                            {{ Form::text('title', null, array('placeholder' => 'Title','class' => 'form-control')) }}
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <strong>Last Name:</strong>
-                                            {{ Form::text('last_name', null, array('placeholder' => 'Last','class' => 'form-control')) }}
+                                            <strong>Description:</strong>
+                                            {{ Form::textarea('body', null, array('placeholder' => 'Last','class' => 'form-control')) }}
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <strong>Address:</strong>
-                                            {{ Form::text('address', null, array('placeholder' => 'Tags','class' => 'form-control')) }}
+                                            <strong>Tags:</strong>
+                                            {{ Form::text('tags', null, array('placeholder' => 'Tags','class' => 'form-control')) }}
                                         </div>
                                     </div>
                                 </div>

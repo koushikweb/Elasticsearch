@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Article;
 use Response;
 class ArticleController extends Controller
@@ -11,6 +12,7 @@ class ArticleController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *  @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -35,6 +37,12 @@ class ArticleController extends Controller
         ]);
         $article= Article::create($request->all());
         $article->addToIndex();
-        return redirect()->back();
+        return redirect()->back()->with('flash_message_success', 'Record created successfully');
     }
+   function listing(){
+       $articles =  DB::table('articles')->get();
+
+      return view ('index', compact('articles', $articles));
+   }
+
 }
