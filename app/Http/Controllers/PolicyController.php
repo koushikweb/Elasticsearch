@@ -23,14 +23,14 @@ class PolicyController extends Controller
     {
         $policies = '';
         if($request->has('search')){
-           // $policies = Policy::search($request->get('search'))->get();
+           $policies = Policy::search($request->get('search'))->get();
 
-            $policies = Policy::query()
-                ->where('policy', 'LIKE', "%{$request->input('search')}%")
-                ->orWhere('clients', 'LIKE', "%{$request->input('search')}%")
-                ->orWhere('advisor_name', 'LIKE', "%{$request->input('search')}%")
-                ->orWhere('career_name', 'LIKE', "%{$request->input('search')}%")
-                ->get();
+//            $policies = Policy::query()
+//                ->where('policy', 'LIKE', "%{$request->input('search')}%")
+//                ->orWhere('clients', 'LIKE', "%{$request->input('search')}%")
+//                ->orWhere('advisor_name', 'LIKE', "%{$request->input('search')}%")
+//                ->orWhere('career_name', 'LIKE', "%{$request->input('search')}%")
+//                ->get();
 
         }
         return view('index',compact('policies'));
