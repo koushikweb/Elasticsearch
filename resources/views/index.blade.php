@@ -49,13 +49,15 @@
     </div><!-- /.row -->
     <div class="col px-md-5"><div class="p-3"></div></div>
 <!-- Search Result section start-->
-    @foreach($policies as $policy)
-        <p>{{ $policy->policy }}</p>
-        <p> {{ $policy->clients }}</p>
-        <p>{{ $policy->advisor_name }}</p>
-        <p>{{ $policy->career_name }}</p>
-        <hr>
-@endforeach
+{{--    @if(!empty($policies))--}}
+{{--    @foreach($policies as $policy)--}}
+{{--        <p>{{ $policy->policy }}</p>--}}
+{{--        <p> {{ $policy->clients }}</p>--}}
+{{--        <p>{{ $policy->advisor_name }}</p>--}}
+{{--        <p>{{ $policy->career_name }}</p>--}}
+{{--        <hr>--}}
+{{--    @endforeach--}}
+{{--@endif--}}
 <!-- Search Result section start end -->
 <div class="row justify-content-center">
     <h5>Agent</h5>
@@ -96,16 +98,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+
           @if(!empty($policies))
                 @foreach($policies as $key => $value)
+             <tr>
             <td>{{ $value->policy }}</td>
             <td>{{ $value->clients }}</td>
             <td>{{ $value->advisor_name}}</td>
             <td>{{ $value->career_name }}</td>
+             </tr>
                 @endforeach
             @endif
-        </tr>
+
         </tbody>
     </table>
 </div>
