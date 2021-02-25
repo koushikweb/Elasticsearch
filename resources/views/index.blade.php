@@ -51,11 +51,16 @@
 <!-- Search Result section start-->
     @if(!empty($policyres))
     @foreach($policyres as $policy)
-        <p>{{ $policy->policy }}</p>
-        <p> {{ $policy->clients }}</p>
-        <p>{{ $policy->advisor_name }}</p>
-        <p>{{ $policy->career_name }}</p>
-        <hr>
+
+   <table style="width: auto;" class="table">
+     <tr>
+       <td>{{ $policy->policy }}</td>
+       <td> {{ $policy->clients }}</td>
+       <td>{{ $policy->advisor_name }}</td>
+       <td>{{ $policy->career_name }}</td>
+     </tr>
+   </table>
+
     @endforeach
 @endif
 <!-- Search Result section start end -->
