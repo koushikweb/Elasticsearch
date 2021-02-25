@@ -29,5 +29,3 @@ Route::get('/', 'PolicyController@listing');
 Route::get('/addrecord', 'PolicyController@index');
 Route::post('/createpolicy', 'PolicyController@create');
 Route::post('/createagent', 'AgentController@create');
-
-

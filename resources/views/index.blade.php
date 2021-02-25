@@ -35,7 +35,6 @@
 <div class="container">
     <a href="/addrecord">Add Record</a>
     <div class="row justify-content-center">
-        <div class="col-lg-4">
 
             <form role="form" method="GET" action="{{action('PolicyController@search')}}">
             <div class="input-group">
@@ -49,15 +48,19 @@
     </div><!-- /.row -->
     <div class="col px-md-5"><div class="p-3"></div></div>
 <!-- Search Result section start-->
-    @if(!empty($policyres))
-    @foreach($policyres as $policy)
+    @if(!empty($merged))
+    @foreach($merged as $data)
 
    <table style="width: auto;" class="table">
      <tr>
-       <td>{{ $policy->policy }}</td>
-       <td> {{ $policy->clients }}</td>
-       <td>{{ $policy->advisor_name }}</td>
-       <td>{{ $policy->career_name }}</td>
+       <td>{{ $data->policy }}</td>
+       <td> {{ $data->clients }}</td>
+       <td>{{ $data->advisor_name }}</td>
+       <td>{{ $data->career_name }}</td>
+       <td>{{ $data->firstname }}</td>
+       <td> {{ $data->lastname }}</td>
+       <td>{{ $data->address }}</td>
+       <td>{{ $data->phone }}</td>
      </tr>
    </table>
 
@@ -67,9 +70,14 @@
 <div class="row justify-content-center">
 
         @if(!empty($agents))
-        <h5>Agent</h5>
+
         <table style="width: auto;" class="table table-striped table-condensed">
             <thead>
+
+            <tr>
+                <td colspan="4" class="label"><h5>Agent</h5></td>
+            </tr>
+
             <tr>
                 <th>Firstname</th>
                 <th>Lastname</th>
@@ -92,9 +100,12 @@
         @endif
 
           @if(!empty($policies))
-        <h5>Policy</h5>
+
         <table style="width: auto;" class="table table-striped table-condensed">
             <thead>
+            <tr>
+                <td colspan="4" class="label"><h5>Policy</h5></td>
+            </tr>
             <tr>
                 <th>Policy</th>
                 <th>Client</th>
