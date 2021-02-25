@@ -5,10 +5,10 @@ namespace App;
 use Elasticquent\ElasticquentTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Agent extends Model
+class Policy extends Model
 {
     use ElasticquentTrait;
-    protected $fillable = ['firstname', 'lastname', 'address','phone'];
+    protected $fillable = ['policy', 'clients', 'advisor_name','career_name'];
 
     function getIndexName()
     {

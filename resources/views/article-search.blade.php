@@ -28,9 +28,12 @@
                     <div class="col-lg-6">
                         @if(!empty($articles))
                             @foreach($articles as $key => $value)
-                                <h3 class="text-danger">{{ $value['title'] }}</h3>
-                                <p>{{ $value['body'] }}</p>
-                                <p>{{ $value['tags'] }}</p>
+                                Search Result
+                               <hr>
+                                 <h3 class="text-danger">Title : {{ $value['title'] }}</h3>
+                                 <p><b>Body:</b> {{ $value['body'] }}</p>
+                                <p><b>Tags : </b> {{ $value['tags'] }}</p>
+                                <hr>
                             @endforeach
                         @endif
                     </div>

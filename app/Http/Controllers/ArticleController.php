@@ -18,7 +18,19 @@ class ArticleController extends Controller
     {
         $articles = '';
         if($request->has('search')){
-            $articles = Article::search($request->input('search'))->toArray();
+            //$articles = Article::search($request->input('search'))->toArray();
+            $articles = Article::search($request->get('search'))->get();
+
+
+           // $articles = Article::find($request->input('search'));
+
+
+//            $articles = Article::query()
+//                ->where('title', 'LIKE', "%{$request->input('search')}%")
+//                ->orWhere('body', 'LIKE', "%{$request->input('search')}%")
+//                ->orWhere('tags', 'LIKE', "%{$request->input('search')}%")
+//                ->get();
+
         }
         return view('article-search',compact('articles'));
         //return view('article-search')->with([ 'articles' => $articles ]);

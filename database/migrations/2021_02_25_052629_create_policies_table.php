@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgentsTable extends Migration
+class CreatePoliciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateAgentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('agents', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->text('address');
+        Schema::create('policies', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('policy');
+            $table->string('clients');
+            $table->string('advisor_name');
+            $table->string('career_name');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateAgentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agents');
+        Schema::dropIfExists('policies');
     }
 }

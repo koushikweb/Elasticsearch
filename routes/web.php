@@ -13,31 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  //return view('welcome');
-});
 
 use App\Article;
+use App\Agent;
 
 //Route::get('/', function () {
-//    Article::createIndex($shards = null, $replicas = null);
-//
-//    Article::putMapping($ignoreConflicts = true);
-//
-//    Article::addAllToIndex();
-//
 //    return view('welcome');
 //});
-//
-//Route::get('/search', function() {
-//
-//    $articles = Article::searchByQuery(['match' => ['title' => 'Sed']]);
-//
-//    return $articles;
-//});
-Route::get('/', 'ArticleController@listing');
+
+//Route::get('/', 'ArticleController@listing');
 Route::get('/articleSearch', 'ArticleController@index');
 Route::post('/articleSearchCreate', 'ArticleController@create');
+Route::get('/search', 'PolicyController@search');
+Route::get('/', 'PolicyController@listing');
+Route::get('/addrecord', 'PolicyController@index');
+Route::post('/createpolicy', 'PolicyController@create');
+Route::post('/createagent', 'AgentController@create');
 
-Route::get('about', 'AboutController@index');
-Route::get('todos', 'TodosController@index');
+
+
+//Route::get('about', 'AboutController@index');
+//Route::get('todos', 'TodosController@index');
