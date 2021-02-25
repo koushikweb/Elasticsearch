@@ -49,31 +49,30 @@
     </div><!-- /.row -->
     <div class="col px-md-5"><div class="p-3"></div></div>
 <!-- Search Result section start-->
-{{--    @if(!empty($policies))--}}
-{{--    @foreach($policies as $policy)--}}
-{{--        <p>{{ $policy->policy }}</p>--}}
-{{--        <p> {{ $policy->clients }}</p>--}}
-{{--        <p>{{ $policy->advisor_name }}</p>--}}
-{{--        <p>{{ $policy->career_name }}</p>--}}
-{{--        <hr>--}}
-{{--    @endforeach--}}
-{{--@endif--}}
+    @if(!empty($policyres))
+    @foreach($policyres as $policy)
+        <p>{{ $policy->policy }}</p>
+        <p> {{ $policy->clients }}</p>
+        <p>{{ $policy->advisor_name }}</p>
+        <p>{{ $policy->career_name }}</p>
+        <hr>
+    @endforeach
+@endif
 <!-- Search Result section start end -->
 <div class="row justify-content-center">
-    <h5>Agent</h5>
-    <table style="width: auto;" class="table table-striped table-condensed">
-        <thead>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Address</th>
-            <th>Phone</th>
-        </tr>
 
-
-        </thead>
-        <tbody>
         @if(!empty($agents))
+        <h5>Agent</h5>
+        <table style="width: auto;" class="table table-striped table-condensed">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Address</th>
+                <th>Phone</th>
+            </tr>
+            </thead>
+            <tbody>
             @foreach($agents as $key => $value)
         <tr>
             <td>{{ $value->firstname }}</td>
@@ -83,23 +82,22 @@
 
         </tr>
             @endforeach
+            </tbody>
+        </table>
         @endif
-        </tbody>
-    </table>
-
-    <h5>Policy</h5>
-    <table style="width: auto;" class="table table-striped table-condensed">
-        <thead>
-        <tr>
-            <th>Policy</th>
-            <th>Client</th>
-            <th>Advisor Name</th>
-            <th>Career Name</th>
-        </tr>
-        </thead>
-        <tbody>
 
           @if(!empty($policies))
+        <h5>Policy</h5>
+        <table style="width: auto;" class="table table-striped table-condensed">
+            <thead>
+            <tr>
+                <th>Policy</th>
+                <th>Client</th>
+                <th>Advisor Name</th>
+                <th>Career Name</th>
+            </tr>
+            </thead>
+            <tbody>
                 @foreach($policies as $key => $value)
              <tr>
             <td>{{ $value->policy }}</td>
@@ -108,10 +106,9 @@
             <td>{{ $value->career_name }}</td>
              </tr>
                 @endforeach
+            </tbody>
+        </table>
             @endif
-
-        </tbody>
-    </table>
 </div>
 </div>
 </body>

@@ -21,19 +21,18 @@ class PolicyController extends Controller
      */
     public function search(Request $request)
     {
-        $policies = '';
+        $policyres = '';
         if($request->has('search')){
-           $policies = Policy::search($request->get('search'))->get();
+            //$policyres = Policy::search($request->get('search'))->get();
 
-//            $policies = Policy::query()
-//                ->where('policy', 'LIKE', "%{$request->input('search')}%")
-//                ->orWhere('clients', 'LIKE', "%{$request->input('search')}%")
-//                ->orWhere('advisor_name', 'LIKE', "%{$request->input('search')}%")
-//                ->orWhere('career_name', 'LIKE', "%{$request->input('search')}%")
-//                ->get();
-
+            $policyres = Policy::query()
+                ->where('policy', 'LIKE', "%{$request->input('search')}%")
+                ->orWhere('clients', 'LIKE', "%{$request->input('search')}%")
+                ->orWhere('advisor_name', 'LIKE', "%{$request->input('search')}%")
+                ->orWhere('career_name', 'LIKE', "%{$request->input('search')}%")
+                ->get();
         }
-        return view('index',compact('policies'));
+        return view('index',compact('policyres'));
     }
     public function create(Request  $request){
            $this->validate($request, [
