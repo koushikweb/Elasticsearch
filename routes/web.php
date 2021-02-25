@@ -31,6 +31,3 @@ Route::post('/createpolicy', 'PolicyController@create');
 Route::post('/createagent', 'AgentController@create');
 
 
-
-//Route::get('about', 'AboutController@index');
-//Route::get('todos', 'TodosController@index');
